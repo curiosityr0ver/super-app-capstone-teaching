@@ -38,7 +38,7 @@ const Registration = () => {
 				<img src={bgImage} className={styles.bgImage} alt="Registration" />
 			</div>
 			<div className={styles.right}>
-				<div>
+				<div style={styles.rightHeader}>
 					<h2>Super app</h2>
 					<h4>Create your new account</h4>
 				</div>
