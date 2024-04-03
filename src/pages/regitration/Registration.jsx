@@ -31,7 +31,7 @@ const Registration = () => {
 		<div className={styles.page}>
 			<div className={styles.left}>
 				<div className={styles.leftHeader}>
-					<h1 className={styles.h1}>
+					<h1 className={styles.bgHeader}>
 						Discover new things on <br></br> SuperApp
 					</h1>
 				</div>
