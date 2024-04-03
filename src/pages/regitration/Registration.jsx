@@ -40,7 +40,7 @@ const Registration = () => {
 			<div className={styles.right}>
 				<div style={styles.rightHeader}>
 					<h2>Super app</h2>
-					<h4>Create your new account</h4>
+					<h3>Create your new account</h3>
 				</div>
 				<div className={styles.form}>
 					<div className="form-group">
