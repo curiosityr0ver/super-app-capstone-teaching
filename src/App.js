@@ -6,8 +6,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Registration />} />
-          <Route path="/genre" element={<Genre />} />
-
+          {/* <Route path="/genre" element={<Genre />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

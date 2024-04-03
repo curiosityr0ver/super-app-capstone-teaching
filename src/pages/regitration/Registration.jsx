@@ -84,6 +84,7 @@ const Registration = () => {
 							type="checkbox"
 							value={shareData}
 							onChange={(e) => setShareData(e.target.checked)}
+							className={styles.checkbox}
 						/>
 						<label htmlFor="mobile">
 							Share my registration data with Superapp
