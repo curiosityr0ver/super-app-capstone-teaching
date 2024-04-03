@@ -15,14 +15,12 @@ const Registration = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!name || !username || !email || !mobile) {
+		if (!name || !username || !email || !shareData) {
 			alert("Please fill all fields");
 			return;
 		} else {
-			localStorage.setItem(
-				"currentUser",
-				JSON.stringify({ name, username, email, mobile })
-			);
+			const currentUser = { name, username, email, mobile };
+			localStorage.setItem("currentUser", JSON.stringify(currentUser));
 		}
 		console.log(JSON.parse(localStorage.getItem("currentUser")));
 	};
