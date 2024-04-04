@@ -4,4 +4,43 @@
     width: 100vw;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 100%;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 100%;
+}
+
+.genreGrid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.genreCard {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    color: white;
+}
+
+.color1 {
+    background-color: "#11B800",
+}
+
+.color2 {
+    background-color: "#D7A4FF";
+}
+
 .selectedGenre {}
