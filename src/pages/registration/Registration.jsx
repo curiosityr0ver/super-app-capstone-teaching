@@ -88,7 +88,11 @@ const Registration = () => {
 							Share my registration data with Superapp
 						</label>
 					</div>
-					<button type="submit" onClick={handleSubmit}>
+					<button
+						className={styles.submit}
+						type="submit"
+						onClick={handleSubmit}
+					>
 						SIGN UP
 					</button>
 				</div>

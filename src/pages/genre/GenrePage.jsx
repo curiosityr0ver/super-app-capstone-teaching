@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import actionBG from "../../assets/actionBG.png";
 import styles from "./GenrePage.module.css";
-import { set } from "mongoose";
+import { IoIosWarning } from "react-icons/io";
 
 function GenrePage() {
 	const [genres, setGenres] = useState([
@@ -46,6 +46,12 @@ function GenrePage() {
 	const [person, setperson] = useState({ name: "John", age: 25 });
 	const [lengthWarning, setLengthWarning] = useState(false);
 
+	useEffect(() => {
+		if (selectedGenres.length >= 3) {
+			setLengthWarning(false);
+		}
+	}, [selectedGenres]);
+
 	const bgColors = [
 		"#11B800",
 		"#D7A4FF",
@@ -66,13 +72,7 @@ function GenrePage() {
 	};
 
 	const selectGenre = (index) => {
-		//one element will get added after the execution of this function
-		if (selectedGenres.length == 2) {
-			// in future, the length will become 3
-			setLengthWarning(false);
-		}
-		// index  = 4
-		setSelectedGenres([...selectedGenres, index]);
+		setSelectedGenres((prev) => [...prev, index]);
 	};
 
 	const handleNext = () => {
@@ -86,18 +86,26 @@ function GenrePage() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.left}>
-				<h2>Super app</h2>
-				<h1>Choose your entertainment category</h1>
-				{lengthWarning && <p>Minimum 3 category required</p>}
+				<div className={styles.headers}>
+					<h1 className={styles.leftHeader}>Super app</h1>
+					<h2 className={styles.leftSubHeader}>
+						Choose your <br /> entertainment <br /> category
+					</h2>
+				</div>
+
 				<div className={styles.selected}>
 					{selectedGenres.map((item, index) => (
 						<div key={item} className={styles.selectedGenre}>
 							{genres[item].title}
-							<img src={genres[item].bgImage} alt="background Image" />
 							<button onClick={() => removeGenre(item)}>X</button>
 						</div>
 					))}
 				</div>
+				{lengthWarning && (
+					<div className={styles.warning}>
+						<IoIosWarning /> <div> &nbsp;Minimum 3 category required</div>
+					</div>
+				)}
 			</div>
 			<div className={styles.right}>
 				<div className={styles.genreGrid}>
@@ -106,14 +114,16 @@ function GenrePage() {
 							key={index}
 							className={styles.genreCard}
 							onClick={() => selectGenre(index)}
-							// style={{ backgroundColor: bgColors[index] }}
+							style={{ backgroundColor: bgColors[index] }}
 						>
-							{genre.title}
+							<div className={styles.title}> {genre.title}</div>
 							<img src={genre.bgImage} alt="background Image" />
 						</div>
 					))}
 				</div>
-				<button onClick={handleNext}>Next Page</button>
+				<button className={styles.button} onClick={handleNext}>
+					Next Page
+				</button>
 			</div>
 		</div>
 	);

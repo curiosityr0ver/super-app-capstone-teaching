@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Single+Day&display=swap');
 
-
-body {
+.page {
     font-family: "DM Sans", sans-serif;
+    display: flex;
     color: white;
     overflow: hidden;
     background-color: black;
-}
-
-.page {
-    display: flex;
     height: 100vh;
     width: 100vw;
 }
@@ -41,10 +37,6 @@ body {
 h2 {
     font-size: 3.5rem;
     font-family: "Single Day", cursive;
-    color: #72DB73;
-}
-
-span {
     color: #72DB73;
 }
 
@@ -81,7 +73,7 @@ input[type="tel"] {
     margin-left: 13.5%;
 }
 
-button {
+.submit {
     all: unset;
     padding: 10px;
     margin: 0% 25%;
