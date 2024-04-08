@@ -50,6 +50,8 @@ function GenrePage() {
 		if (selectedGenres.length >= 3) {
 			setLengthWarning(false);
 		}
+		localStorage.setItem("selectedGenres", JSON.stringify(selectedGenres));
+		console.log(localStorage.getItem("selectedGenres"));
 	}, [selectedGenres]);
 
 	const bgColors = [
@@ -72,6 +74,7 @@ function GenrePage() {
 	};
 
 	const selectGenre = (index) => {
+		if (selectedGenres.includes(index)) return;
 		setSelectedGenres((prev) => [...prev, index]);
 	};
 
