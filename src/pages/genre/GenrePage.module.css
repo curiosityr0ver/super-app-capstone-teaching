@@ -1,129 +1,106 @@
 .page {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    font-family: 'DM Sans', sans-serif;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  font-family: "DM Sans", sans-serif;
 }
-
 
 .left {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 100%;
-    box-sizing: border-box;
-    padding-left: 60px;
-    padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-top: 5%;
 }
-
 .leftHeader {
-
-    font-size: 2.5rem;
-    font-family: "Single Day", cursive;
-    color: #72DB73;
+  font-size: 2.5rem;
+  font-family: "Single Day", cursive;
+  color: #72db73;
 }
 
 .leftSubHeader {
-    color: white;
-    font-size: 2.5rem;
-    font-family: 'DM Sans', sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "DM Sans", sans-serif;
 }
-
+.right {
+  display: flex;
+  height: 100%;
+  width: 60vw;
+  flex-direction: column;
+  align-items: center;
+}
+.genreCard {
+  margin: 10px 0px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  border-radius: 12px;
+}
+.genreGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 8%;
+  height: 70%;
+  width: 70%;
+  margin-left: 65px; /*added recently*/
+}
 
 .selected {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
-
 .selectedGenre {
-    display: flex;
-    justify-content: space-around;
-    border-radius: 20px;
-    padding: 2px 0px;
-    margin: 8px 8px;
-    color: white;
-    background-color: #148A08;
-    flex: 0 0 calc(33.333% - 60px);
-
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin: 8px 8px;
+  color: white;
+  background-color: #72db73;
+  flex: 0 0 calc(33.3333%-60px);
 }
-
 .selectedGenre button {
-    font-size: large;
-    background-color: transparent;
-    border: none;
-    color: darkgreen;
+  font-size: large;
+  background-color: transparent;
+  border: none;
+  color: darkgreen;
 }
-
 .warning {
-    display: flex;
-    margin-top: 10px;
-    font-size: 0.8rem;
-    align-items: center;
-    color: #FF0000;
+  display: flex;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  align-items: center;
+  color: #ff0000;
 }
-
-/* Let's break down what each part of the flex property does:
-flex-grow: This property defines the ability for a flex item to grow if necessary. It accepts a unitless value that determines the proportion of space an item should take up relative to other flex items in the same container. In this case,
-flex-grow is set to 0,
-which means the flex item won't grow beyond its initial size.
-
-flex-shrink: This property defines the ability for a flex item to shrink if necessary. Similarly,
-it accepts a unitless value representing the item's ability to shrink relative to other flex items. Setting it to 0 means the item won' t shrink. flex-basis: This property defines the initial size of the flex item before any free space is distributed according to the flex-grow and flex-shrink properties. Here,
-it's set to calc(33.333% - 20px), which means each item initially takes up approximately one-third of the container' s width minus 20px for the margins. The calc() function allows you to perform calculations to determine the value. */
-
-.right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60vw;
-    height: 100%;
-}
-
-.genreGrid {
-    height: 70%;
-    width: 70%;
-    display: grid;
-    grid-template-columns: repeat(3, 0fr);
-    margin-top: 8%;
-}
-
-.genreCard {
-    margin: 10px 0px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    border-radius: 12px;
-}
-
 .genreCard .title {
-    font-size: 1.2rem;
-    padding: 8px 0px;
-    width: 100%;
-    align-self: flex-start;
-    margin-left: 10%;
+  font-size: 1.2rem;
+  padding: 8px 0px;
+  width: 100%;
+  align-self: flex-start;
+  margin-left: 10%;
 }
-
 .genreCard img {
-    object-fit: cover;
-    height: 60%;
+  object-fit: cover;
+  height: 60%;
 }
-
-
 .button {
-    position: fixed;
-    bottom: 40px;
-    align-self: flex-end;
-    margin-right: 8vw;
-    font-family: "DM Sans", sans-serif;
-    border-radius: 20px;
-    background-color: #148A08;
-    ;
-    color: white;
-    border: none;
-    padding: 10px 55px;
+  position: fixed;
+  bottom: 39px;
+  align-self: flex-end;
+  margin-right: 8vw;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 20px;
+  background-color: #148a08;
+  color: white;
+  border: none;
+  padding: 10px 55px;
 }

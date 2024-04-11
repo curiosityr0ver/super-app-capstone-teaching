@@ -1,21 +1,32 @@
 .page {
-    display: flex;
-    background-color: black;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'DM Sans', sans-serif;
+  display: flex;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  font-family: "DM Sans", sans-serif;
 }
 
 .left {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 4% 2.5% 4% 10%;
-    width: 65%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 4% 2.5% 4% 10%;
+  width: 65%;
+  height: 100%;
 }
 
 .userWidget {
+
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-around;
+  margin-bottom: 1.5%;
+  padding: 3%;
+  height: 65%;
+  color: white;
+  background-color: #5746ea;
+  border-radius: 30px;
+
     display: flex;
     box-sizing: border-box;
     margin-bottom: 1.5%;
@@ -27,25 +38,42 @@
 }
 
 .userWidget h3 {
-    margin: 0px;
-    font-size: 2rem;
-    font-weight: 300;
+  margin: 0px;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .userWidget h1 {
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: 3.5rem;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 3.5rem;
 }
 
-.userWidget img {}
+.userWidget img {
+}
 
 .genreGrid {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .pill {
+  width: 20%;
+  flex: 0 0 calc(50% - 60px);
+  border-radius: 20px;
+  background-color: #9f94ff;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.weatherWidget {
+  box-sizing: border-box;
+  margin-top: 1.5%;
+  height: 100%;
+  width: 100%;
+  background-color: #101744;
+  color: white;
+=======
     width: 20%;
     flex: 0 0 calc(50% - 60px);
     border-radius: 20px;
@@ -67,10 +95,30 @@
 
 
 .weatherWidget .header {
-    height: 35%;
-    background-color: #FF4ADE;
+  height: 35%;
+  background-color: #ff4ade;
 }
 
+.right {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 4% 4% 4% 2.5%;
+}
+
+.newsWidget {
+  width: 100%;
+  height: 100%;
+  background-color: cyan;
+}
+
+.newsWidget img {
+  object-fit: cover;
+  height: 42%;
+}
+=======
 .weatherWidget h1 {
     margin: 0px;
 }
