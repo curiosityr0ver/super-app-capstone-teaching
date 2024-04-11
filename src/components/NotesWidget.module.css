@@ -1,0 +1,15 @@
+.notesWidget {
+    padding: 15px;
+}
+
+.header {
+    font-family: "DM Sans", sans-serif;
+}
+
+.input {
+    display: flex;
+    font-size: 1.5rem;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
+    border: none;
+}

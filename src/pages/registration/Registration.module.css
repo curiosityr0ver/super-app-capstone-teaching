@@ -56,7 +56,7 @@ h2 {
     height: 40%;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
@@ -67,7 +67,7 @@ input[type="tel"] {
     border-radius: 3px;
     color: #7C7C7C;
     background-color: #292929;
-}
+} */
 
 .checkbox {
     margin-left: 13.5%;

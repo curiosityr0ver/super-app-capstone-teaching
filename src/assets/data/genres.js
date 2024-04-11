@@ -8,37 +8,8 @@ import romance from "../../assets/romance.png";
 import thriller from "../../assets/thriller.png";
 import Western from "../../assets/western.png";
 
-export const genresHomePage = [
-    {
-        title: "Action",
-    },
-    {
-        title: "Drama",
-    },
-    {
-        title: "Romance",
-    },
-    {
-        title: "Thriller",
-    },
-    {
-        title: "Western",
-    },
-    {
-        title: "Horror",
-    },
-    {
-        title: "Fantasy",
-    },
-    {
-        title: "Music",
-    },
-    {
-        title: "Fiction",
-    },
-];
 
-export const genresGenrePage = [
+export const genres = [
     {
         title: "Action",
         bgImage: action,

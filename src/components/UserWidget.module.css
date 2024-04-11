@@ -1,0 +1,9 @@
+.userWidget {
+    background-color: #5746EA;
+    max-height: inherit;
+    max-width: inherit;
+}
+
+.userWidget img {
+    height: inherit;
+}
