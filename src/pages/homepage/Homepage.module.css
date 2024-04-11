@@ -49,8 +49,8 @@
   font-size: 3.5rem;
 }
 
-.userWidget img {
-}
+/* .userWidget img {
+} */
 
 .genreGrid {
   display: flex;
@@ -67,24 +67,8 @@
 }
 
 .weatherWidget {
-  box-sizing: border-box;
-  margin-top: 1.5%;
-  height: 100%;
-  width: 100%;
-  background-color: #101744;
-  color: white;
-=======
-    width: 20%;
-    flex: 0 0 calc(50% - 60px);
-    border-radius: 20px;
-    background-color: #9F94FF;
-    padding: 10px 20px;
-    margin: 10px;
-}
-
-.weatherWidget {
     box-sizing: border-box;
-    /* margin-top: 1.5%; */
+    margin-top: 1.5%;
     height: 100%;
     width: 100%;
     background-color: #101744;
@@ -95,8 +79,43 @@
 
 
 .weatherWidget .header {
-  height: 35%;
+  display: flex;
+  justify-content: space-around;
   background-color: #ff4ade;
+  padding: 2%;
+  border-radius: 33px 33px 0 0;
+}
+
+.weatherWidget .body{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.weatherWidget .body h1{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.weatherWidget .body > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 5px; */
+}
+
+.weatherWidget .pressure .details{
+  display: flex;
+  align-items: center;
+}
+
+.verticalLine{
+  margin-top: auto;
+  height: 70px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  outline: none;
 }
 
 .right {
@@ -111,14 +130,16 @@
 .newsWidget {
   width: 100%;
   height: 100%;
-  background-color: cyan;
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 33px;
 }
 
 .newsWidget img {
   object-fit: cover;
   height: 42%;
 }
-=======
+/* ======= */
 .weatherWidget h1 {
     margin: 0px;
 }
@@ -127,6 +148,12 @@
     width: inherit;
     display: flex;
     justify-content: space-evenly;
+}
+
+.wind > div{
+  display: inline;
+  flex-direction: row;
+  align-items: center;
 }
 
 .right {
@@ -142,6 +169,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
+    color: #000000;
     border-radius: 30px;
     overflow: hidden;
 }
@@ -150,25 +178,35 @@
 .newsWidget .header {
     position: relative;
     width: 100%;
+    height: 62%;
     border: none;
 }
 
-.headerText {
-
-    margin: 0px;
-    padding: 0px 10px;
-    position: absolute;
-    bottom: 4px;
-    color: white;
-    background-color: rgba(6, 0, 0, 0.5);
+.newsWidget .headerText{
+  width: inherit;
+  margin: 0px;
+  padding: 10px 10px;
+  position: absolute;
+  bottom: 1px;
+  color: white;
+  background-color: rgba(6, 0, 0, 0.5);
+}
+.newsWidget .header h1 {
+  font-size: 22px;
+  font-weight: 500;
+}
+.newsWidget .headerText h3{
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.newsWidget img{
+  border-radius: 33px 33px 0 0;
+  object-fit: cover;
+  width: inherit;
+  height: 100%;
 }
 
-.newsWidget img {
-    /* border-radius: 30px 30px 0px 0px; */
-    width: inherit;
-    max-height: 50%;
-}
-
-.newsWidget .footer {
-    padding: 20px 25px;
+.newsWidget .footer{
+  padding: 20px;
 }
