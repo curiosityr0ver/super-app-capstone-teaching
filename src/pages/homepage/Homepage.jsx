@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import styles from "./Homepage.module.css";
 import userAvatar from "../../assets/image 14.png";
 import axios from "axios";
+import { FaThermometerThreeQuarters } from "react-icons/fa";
+import { FiWind } from "react-icons/fi";
+import { RiContrastDrop2Fill } from "react-icons/ri";
 
 function Homepage() {
 	const NEWS_API = process.env.REACT_APP_NEWS_API_KEY;
 	const WEATHER_API = process.env.REACT_APP_WEATHER_API_KEY;
 	const [user, setUser] = useState();
-	const [selectedGenres, setSelectedGenres] = useState([1, 2, 3, 4, 5, 6, 7]);
+	const [selectedGenres, setSelectedGenres] = useState([1, 2, 3]);
 	const genres = [
 		{
 			title: "Action",
@@ -43,7 +46,7 @@ function Homepage() {
 	useEffect(() => {
 		setUser(JSON.parse(localStorage.getItem("currentUser")));
 		// console.log(new Date());
-		setSelectedGenres(JSON.parse(localStorage.getItem("selectedGenres")));
+		// setSelectedGenres(JSON.parse(localStorage.getItem("selectedGenres")));
 		fetchWeatherData();
 		fetchNewsData();
 	}, []);
@@ -132,7 +135,7 @@ function Homepage() {
 							<h3> {user.name}</h3>
 							<h3>{user.email}</h3>
 							<h1>{user.username}</h1>
-							{selectedGenres.length > 0 && (
+							{selectedGenres && (
 								<div className={styles.genreGrid}>
 									{selectedGenres
 										.filter((genre, index) => index < 4)
@@ -147,15 +150,40 @@ function Homepage() {
 				{weather && (
 					<div className={styles.weatherWidget}>
 						<div className={styles.header}>
-							<h3>{formatDate()}</h3>
+							<h1>{formatDate()}</h1>
 						</div>
-						<div className={styles.body}>
-							<p>{weather.condition.text}</p>
-							<p>{weather.temp_c}</p>
-							<p>{weather.pressure_mb}</p>
-							<p>Wind Speed:{weather.wind_kph}</p>
-							<p>Humidity:{weather.humidity}%</p>
-							<img src={weather.condition.icon} alt="" />
+						<div className={styles.footer}>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									alignItems: "center",
+								}}
+							>
+								<img src={weather.condition.icon} alt="" />
+								<div>{weather.condition.text}</div>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									alignItems: "center",
+								}}
+							>
+								<div style={{ fontSize: "3rem" }}>{weather.temp_c} °C </div>
+								<FaThermometerThreeQuarters />
+								<div>{weather.pressure_mb} mbar</div>
+								<div>Pressure</div>
+							</div>
+							<div>
+								<div>Wind Speed:{weather.wind_kph}</div>
+								<FiWind />
+
+								<div>Humidity:{weather.humidity}%</div>
+								<RiContrastDrop2Fill />
+							</div>
 						</div>
 					</div>
 				)}
@@ -163,10 +191,14 @@ function Homepage() {
 			<div className={styles.right}>
 				{news && (
 					<div className={styles.newsWidget}>
-						<img src={news.urlToImage} alt="" />
-						<h1>{news.title}</h1>
-						<h3>{formatDate(news.publishedAt)}</h3>
-						<p>{news.description}</p>
+						<div className={styles.header}>
+							<img src={news.urlToImage} alt="" />
+							<div className={styles.headerText}>
+								<h3>{news.title.split("-")[0]}</h3>
+								<h5>{formatDate(news.publishedAt)}</h5>
+							</div>
+						</div>
+						<div className={styles.footer}>{news.description}</div>
 					</div>
 				)}
 			</div>
