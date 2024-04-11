@@ -1,91 +1,158 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
 .page {
   display: flex;
-  background-color: black;
   height: 100vh;
-  width: 100vw;
-  font-family: "DM Sans", sans-serif;
+  padding: 3rem;
+  background-color: black;
 }
-
 .left {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 4% 2.5% 4% 10%;
-  width: 65%;
-  height: 100%;
+  color: white;
 }
-
 .userWidget {
   display: flex;
-  box-sizing: border-box;
-  justify-content: space-around;
-  margin-bottom: 1.5%;
-  padding: 3%;
-  height: 65%;
-  color: white;
-  background-color: #5746ea;
-  border-radius: 30px;
-}
-
-.userWidget h3 {
-  margin: 0px;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-.userWidget h1 {
-  margin-top: 10px;
-  font-weight: 500;
-  font-size: 3.5rem;
-}
-
-.userWidget img {
-}
-
-.genreGrid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.pill {
-  width: 20%;
-  flex: 0 0 calc(50% - 60px);
+  gap: 4rem;
+  background-color: rgba(87, 70, 234, 1);
+  height: 62%;
   border-radius: 20px;
-  background-color: #9f94ff;
-  padding: 10px 20px;
-  margin: 10px;
 }
-
-.weatherWidget {
-  box-sizing: border-box;
-  margin-top: 1.5%;
-  height: 100%;
-  width: 100%;
-  background-color: #101744;
-  color: white;
-}
-
-.weatherWidget .header {
-  height: 35%;
-  background-color: #ff4ade;
-}
-
-.right {
-  width: 35%;
-  height: 100%;
+.infoFlex {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 4% 4% 4% 2.5%;
+}
+.userInfo {
+  margin-bottom: 3rem;
+}
+.userWidget img {
+  width: 20%;
+  height: 100%;
+  margin-left: 100px;
+}
+.genreGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.pill {
+  padding: 1rem 5rem;
+  background-color: rgba(159, 148, 255, 1);
+  border-radius: 25px;
+}
+.nameEmail {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.username {
+  font-size: 4rem;
+  font-weight: 500;
+}
+/*weather*/
+.weatherWidget {
+  border-radius: 20px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 74, 222, 1);
+  height: 63px;
+  color: white;
+  width: 900px;
+}
+.header h3 {
+  display: flex;
+  gap: 19rem;
+  font-size: 2rem;
+}
+.body {
+  width: 900px;
+  height: 150px;
+
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(16, 23, 68, 1);
+  color: white;
+}
+.groupWeatherFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 1rem;
 }
 
+.groupWeatherFlex:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -70px;
+  bottom: 30%;
+  width: 1px;
+  background-color: white;
+}
+
+.weatherIcon {
+  width: 6rem;
+  height: 6rem;
+}
+.pressure {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.pressureFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.pressureSubFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.temp {
+  font-size: 3.5rem;
+}
+.wind {
+  width: 2rem;
+  height: 2rem;
+}
+.humidity {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+/*news*/
+
 .newsWidget {
-  width: 100%;
-  height: 100%;
-  background-color: cyan;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  margin-left: 80px;
+  background-color: rgba(255, 255, 255, 1);
+  height: 86.5vh;
+  border-radius: 25px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .newsWidget img {
-  object-fit: cover;
-  height: 42%;
+  width: 100%;
+  height: 50%;
+}
+.titleDate {
+  position: absolute;
+  background-color: black;
+  opacity: 0.7;
+  bottom: 19.8rem;
+  color: white;
 }
