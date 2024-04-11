@@ -17,9 +17,9 @@ function GenrePage() {
   }, [selectedGenres]);
 
   const bgColors = [
-    "#11B800",
+    "#FF5209",
     "#D7A4FF",
-    "#11B800",
+    "#148A08",
     "#84C2FF",
     "#902500",
     "#7358FF",
@@ -79,7 +79,7 @@ function GenrePage() {
               key={index}
               className={styles.genreCard}
               onClick={() => selectGenre(index)}
-              style={{ backgroundColor: bgColors[index] }}
+              style={{ backgroundColor: bgColors[index],border: selectedGenres.includes(index)? "6px solid #11B800": '' }}
             >
               <div className={styles.title}> {genre.title}</div>
               <img src={genre.bgImage} alt="background Image" />

@@ -42,6 +42,7 @@
   align-items: center;
   color: white;
   border-radius: 12px;
+  border: 6px solid transparent;
 }
 .genreGrid {
   display: grid;
