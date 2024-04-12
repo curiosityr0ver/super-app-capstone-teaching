@@ -46,6 +46,7 @@ const Registration = () => {
 							type="text"
 							name="name"
 							placeholder="Name"
+							className={styles.input}
 							value={name}
 							onChange={(e) => setName(e.target.value)}
 						/>
@@ -55,6 +56,7 @@ const Registration = () => {
 							type="text"
 							name="username"
 							placeholder="Userame"
+							className={styles.input}
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 						/>
@@ -64,6 +66,7 @@ const Registration = () => {
 							type="email"
 							name="email"
 							placeholder="Email"
+							className={styles.input}
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
@@ -73,6 +76,7 @@ const Registration = () => {
 							type="tel"
 							name="mobile"
 							placeholder="Mobile"
+							className={styles.input}
 							value={mobile}
 							onChange={(e) => setMobile(e.target.value)}
 						/>

@@ -10,7 +10,7 @@ function NotesWidget() {
 
 	useEffect(() => {
 		if (note) {
-			localStorage.setItem("note", note);
+			localStorage.setItem("note", note.trim()); //removing whitespaces before and after a string
 		}
 	}, [note]);
 

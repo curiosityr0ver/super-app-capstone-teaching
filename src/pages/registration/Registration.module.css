@@ -48,6 +48,17 @@ h2 {
     align-items: center;
 }
 
+
+.input {
+    all: unset;
+    padding: 10px;
+    margin: 0% 25%;
+    width: 50%;
+    border-radius: 3px;
+    color: #7C7C7C;
+    background-color: #292929;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -56,18 +67,7 @@ h2 {
     height: 40%;
 }
 
-/* input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"] {
-    all: unset;
-    padding: 10px;
-    margin: 0% 25%;
-    width: 50%;
-    border-radius: 3px;
-    color: #7C7C7C;
-    background-color: #292929;
-} */
+
 
 .checkbox {
     margin-left: 13.5%;

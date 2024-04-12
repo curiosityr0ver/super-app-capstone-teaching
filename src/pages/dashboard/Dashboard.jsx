@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./DashBoard.module.css";
 import UserWidget from "../../components/UserWidget";
 import NotesWidget from "../../components/NotesWidget";
+import CountDownWidget from "../../components/CountDownWidget";
+// import TimerWidget from "../../components/TimerWidget";
 function Dashboard() {
 	const [user, setUser] = useState();
 
@@ -38,7 +40,9 @@ function Dashboard() {
 					{/* {user && <UserWidget user={user} />} */}
 				</div>
 				<div className={styles.WeatherWidget}></div>
-				<div className={styles.TimerWidget}></div>
+				<div className={styles.TimerWidget}>
+					<CountDownWidget />
+				</div>
 				<div className={styles.NotesWidget}>
 					<NotesWidget />
 				</div>
