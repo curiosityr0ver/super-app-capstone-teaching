@@ -1,57 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .page {
-    height: 100vh;
-    width: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 2.3rem;
 }
 
 .container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px 40px;
-    grid-auto-flow: row;
-    align-items: end;
-    grid-template-areas:
-        "User-Widget Notes-Widget News-Widget"
-        "User-Widget Notes-Widget News-Widget"
-        "Weather-Widget Notes-Widget News-Widget"
-        "Timer-Widget Timer-Widget News-Widget"
-        "Timer-Widget Timer-Widget News-Widget";
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 2fr;
+  gap: 20px 35px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "UserWidget NotesWidget NewsWidget"
+    "WeatherWidget NotesWidget NewsWidget"
+    "TimerWidget TimerWidget NewsWidget";
 }
 
 .UserWidget {
-    height: inherit;
-    width: inherit;
-    background-color: #5746EA;
-    ;
-    grid-area: User-Widget;
+  background-color: #5746ea;
+  padding: 128px;
 }
 
 .WeatherWidget {
-    height: inherit;
-    width: inherit;
-    background-color: #FF4ADE;
-    grid-area: Weather-Widget;
-}
-
-.TimerWidget {
-    height: inherit;
-    width: inherit;
-    background-color: #1E2343;
-    grid-area: Timer-Widget;
+  grid-area: WeatherWidget;
+  background-color: #ff4ade;
 }
 
 .NotesWidget {
-    height: inherit;
-    width: inherit;
-    background-color: #F1C75B;
-    grid-area: Notes-Widget;
+  grid-area: NotesWidget;
+  background-color: #f1c75b;
+}
+
+.TimerWidget {
+  grid-area: TimerWidget;
+  background-color: #1e2343;
 }
 
 .NewsWidget {
-    height: inherit;
-    width: inherit;
-    background-color: lightcoral;
-    grid-area: News-Widget;
+  grid-area: NewsWidget;
+  background-color: lightcoral;
 }
