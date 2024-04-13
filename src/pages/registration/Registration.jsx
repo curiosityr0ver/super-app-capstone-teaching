@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import bgImage from "../../assets/image 13.png";
 import styles from "./Registration.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
+	const navigate = useNavigate();
 	const [name, setName] = useState();
 	const [username, setUsername] = useState();
 	const [email, setEmail] = useState();
@@ -11,6 +13,12 @@ const Registration = () => {
 	const [location, setLocation] = useState({
 		city: "Mumbai",
 		country: "India",
+	});
+
+	useEffect(() => {
+		if (localStorage.getItem("currentUser")) {
+			navigate("/genre");
+		}
 	});
 
 	// useEffect(() => {
