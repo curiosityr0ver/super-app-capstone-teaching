@@ -23,6 +23,8 @@ function Homepage() {
 		fetchNewsData();
 	}, []);
 
+	useEffect(() => {}, []);
+
 	const fetchWeatherData = async () => {
 		const { data, status } = await axios.get(
 			`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API}&q=Mumbai`
@@ -32,11 +34,38 @@ function Homepage() {
 		}
 	};
 	const fetchNewsData = async () => {
+		let countryCode;
+		if (localStorage.getItem("countryCode")) {
+			countryCode = localStorage.getItem("countryCode");
+			console.log(countryCode, " from localstorage");
+		} else {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(({ coords }) => {
+					fetchCountryCode(coords.latitude, coords.longitude).then((output) => {
+						countryCode = output;
+						console.log(countryCode, " from fetchLocation2");
+					});
+				});
+			}
+		}
+
 		const { data, status } = await axios.get(
-			`https://newsapi.org/v2/top-headlines?country=in&apiKey=${NEWS_API}`
+			`https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${NEWS_API}`
 		);
 		if (status == 200) {
 			setNews(data.articles[0]);
+		}
+	};
+	const fetchCountryCode = async (latitude, longitude) => {
+		try {
+			const { data } = await axios.get(
+				`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+			);
+			const { countryCode } = data;
+			localStorage.setItem("countryCode", countryCode);
+			return countryCode;
+		} catch (error) {
+			console.error("Error fetching location:", error);
 		}
 	};
 
@@ -75,27 +104,6 @@ function Homepage() {
 			return `${formattedDate} ${formattedTime}`;
 		}
 	};
-
-	useEffect(() => {
-		console.log(weather);
-
-		// if (weather) {
-		// 	const { condition, pressure_mb, temp_c, wind_kph } = weather;
-		// 	console.log(condition, pressure_mb, temp_c, wind_kph);
-		// }
-	}, [weather, news]);
-
-	useEffect(() => {
-		// genres.map((genre, index) => {
-		// 	if (selectedGenres.includes(index)) {
-		// 		console.log(genre);
-		// 	}
-		// });
-		// selectedGenres.map((genre) => {
-		// 	console.log(genres[genre]);
-		// });
-		// console.log(user);
-	}, [selectedGenres, user]);
 
 	return (
 		<div className={styles.page}>

@@ -8,6 +8,10 @@ const Registration = () => {
 	const [email, setEmail] = useState();
 	const [mobile, setMobile] = useState();
 	const [shareData, setShareData] = useState(false);
+	const [location, setLocation] = useState({
+		city: "Mumbai",
+		country: "India",
+	});
 
 	// useEffect(() => {
 	// 	// console.log({ name, username, email, mobile, shareData });
