@@ -44,3 +44,18 @@
     font-size: 1.5rem;
     color: #949494;
 }
+
+
+
+.start {
+    background-color: #FF6A6A;
+    width: 50%;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+
+
+}

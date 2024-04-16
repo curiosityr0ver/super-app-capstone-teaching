@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./GenrePage.module.css";
 import { IoIosWarning } from "react-icons/io";
 import { genres } from "../../assets/data/genres";
+import { useNavigate } from "react-router-dom";
 
 function GenrePage() {
 	const [selectedGenres, setSelectedGenres] = useState([]); // set methods are ALWAYS asynchronous
 	const [person, setperson] = useState({ name: "John", age: 25 });
 	const [lengthWarning, setLengthWarning] = useState(false);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (selectedGenres.length >= 3) {
@@ -45,6 +47,7 @@ function GenrePage() {
 			setLengthWarning(true);
 		} else {
 			setLengthWarning(false);
+			navigate("/homepage");
 		}
 	};
 

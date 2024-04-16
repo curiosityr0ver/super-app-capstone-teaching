@@ -81,7 +81,6 @@ function CountdownTimer() {
 							.toString()
 							.padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
 						strokeWidth={3}
-						background={true}
 						styles={buildStyles({
 							rotation: 0.25,
 

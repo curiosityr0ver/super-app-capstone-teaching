@@ -3,7 +3,8 @@ import styles from "./DashBoard.module.css";
 import UserWidget from "../../components/UserWidget";
 import NotesWidget from "../../components/NotesWidget";
 import CountDownWidget from "../../components/CountDownWidget";
-// import TimerWidget from "../../components/TimerWidget";
+import TimerWidget from "../../components/TimerWidget";
+import PromotionPage from "../promotion/PromotionPage";
 function Dashboard() {
 	const [user, setUser] = useState();
 
@@ -46,7 +47,7 @@ function Dashboard() {
 				<div className={styles.NotesWidget}>
 					<NotesWidget />
 				</div>
-				<div className={styles.NewsWidget}></div>
+				<div className={styles.NewsWidget}>{/* <PromotionPage /> */}</div>
 			</div>
 		</div>
 	);
