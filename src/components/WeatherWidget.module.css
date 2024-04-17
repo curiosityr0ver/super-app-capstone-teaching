@@ -1,0 +1,47 @@
+.widget {
+    box-sizing: border-box;
+    /* margin-top: 1.5%; */
+    height: 100%;
+    width: 100%;
+    background-color: #101744;
+    color: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+
+.widget .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 35%;
+    background-color: #FF4ADE;
+}
+
+.widget h1 {
+    margin: 0px;
+}
+
+.widget .footer {
+    width: inherit;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+
+}
+
+.column div {
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.icon {
+    font-size: 2rem;
+}
