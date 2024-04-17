@@ -16,14 +16,10 @@ function SuggestMovies({ index, movies }) {
 
 	useEffect(() => {
 		const res = movies
-			?.filter((movie) => movie.genres.includes(genre))
-			?.slice(0, 6);
+			?.filter((movie) => movie.genres.includes(genre)) // we are iterating over the movies array,
+			?.slice(0, 6); // only fetching the first 5 movies
 		setSelectedMovies(res);
 	}, [movies]);
-
-	useEffect(() => {
-		if (selectedMovies) console.log(selectedMovies);
-	}, [selectedMovies]);
 
 	// useEffect(() => {
 	// 	fetch(

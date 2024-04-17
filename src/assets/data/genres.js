@@ -8,7 +8,6 @@ import romance from "../../assets/romance.png";
 import thriller from "../../assets/thriller.png";
 import Western from "../../assets/western.png";
 
-
 export const genres = [
     {
         title: "Action",

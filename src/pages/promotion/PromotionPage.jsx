@@ -6,7 +6,7 @@ import SuggestMovies from "./SuggestMovie";
 import userAvatar from "../../assets/images/userAvatarBG.png";
 
 function PromotionPage() {
-	const [results, setResults] = useState();
+	const [results, setResults] = useState(); // contains the list of all shows from the API
 	const [selectedGenres, setSelectedGenres] = useState([0, 1, 2, 3, 4, 5]);
 	useEffect(() => {
 		const fetchData = async () => {
@@ -28,9 +28,14 @@ function PromotionPage() {
 				<img className={styles.avatar} src={userAvatar} alt="" />
 			</div>
 
-			{selectedGenres?.map((genre, index) => (
-				<SuggestMovies key={index} index={genre} movies={results} />
-			))}
+			{selectedGenres?.map(
+				(
+					genre,
+					index // [0, 2, 5, 6] storing the index of genres
+				) => (
+					<SuggestMovies key={index} index={genre} movies={results} /> // I'm giving the index of the selected genre so that we can filter the shows based on the genre
+				)
+			)}
 		</div>
 	);
 }

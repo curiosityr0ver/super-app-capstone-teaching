@@ -55,7 +55,7 @@ function Homepage() {
 			`https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${NEWS_API}`
 		);
 		if (status == 200) {
-			setNews(data.articles[1]);
+			setNews(data.articles[2]);
 		}
 	};
 	const fetchCountryCode = async (latitude, longitude) => {

@@ -43,6 +43,7 @@ function CountDownWidget() {
 				}
 			}, 1000);
 		}
+		if (seconds > 0) console.log(duration());
 		return () => clearInterval(intervalRef);
 	}, [isActive, seconds, minutes, hours]);
 
@@ -92,18 +93,34 @@ function CountDownWidget() {
 	const duration = () => {
 		const curr = seconds + minutes * 60 + hours * 3600;
 		const total = fixedSeconds + fixedMinutes * 60 + fixedHours * 3600;
-		const res = curr / total;
-		console.log((curr / total) * 100);
-		return res;
+		const res = curr / total; // this is a fraction ranging from [0, 1]
+		return res * 100;
 	};
 
 	return (
 		<div className={styles.widget}>
 			<div className={styles.left}>
-				{`${hours.toString().padStart(2, "0")}:${minutes
-					.toString()
-					.padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
-				<CircularProgressbar value={duration()} />
+				<CircularProgressbar
+					value={duration()}
+					text={`${hours.toString().padStart(2, "0")}:${minutes // text attributes gives us the value that needs to be shown inside the progress bar
+						.toString()
+						.padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
+					strokeWidth={3}
+					styles={buildStyles({
+						rotation: 0.25,
+
+						// Text size
+						textSize: "16px",
+
+						// Can specify path transition in more detail, or remove it entirely
+						// pathTransition: 'none',
+
+						// Colors
+						pathColor: "#FF6A6A",
+						textColor: "#FFFFFF",
+						trailColor: "#191E39",
+					})}
+				/>
 			</div>
 			<div className={styles.right}>
 				<div className={styles.configurator}>
