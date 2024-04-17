@@ -3,26 +3,8 @@ import styles from "./WeatherWidget.module.css";
 import { FaThermometerThreeQuarters } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
 import { RiContrastDrop2Fill } from "react-icons/ri";
-import axios from "axios";
 
-function WeatherWidget() {
-	const WEATHER_API = process.env.REACT_APP_WEATHER_API_KEY;
-	const [weather, setWeather] = useState();
-
-	useEffect(() => {
-		// console.log(new Date());
-		// setSelectedGenres(JSON.parse(localStorage.getItem("selectedGenres")));
-		fetchWeatherData();
-	}, []);
-	const fetchWeatherData = async () => {
-		const { data, status } = await axios.get(
-			`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API}&q=Mumbai`
-		);
-		if (status == 200) {
-			setWeather(data.current);
-		}
-	};
-
+function WeatherWidget({ weather }) {
 	const formatDate = () => {
 		const formattedDate = new Date().toLocaleDateString("en-US", {
 			year: "numeric",

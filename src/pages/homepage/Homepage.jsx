@@ -75,7 +75,7 @@ function Homepage() {
 		<div className={styles.page}>
 			<div className={styles.left}>
 				{user && <UserWidget user={user} selectedGenres={selectedGenres} />}
-				{weather && <WeatherWidget />}
+				{weather && <WeatherWidget weather={weather} />}
 			</div>
 			<div className={styles.right}>{news && <NewsWidget news={news} />}</div>
 		</div>
