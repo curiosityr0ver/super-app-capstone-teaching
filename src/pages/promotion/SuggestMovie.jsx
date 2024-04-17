@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { genres } from "../../assets/data/genres";
-import { set } from "mongoose";
 import styles from "./SuggestMovie.module.css";
 
 // import "../Styling/SuggestedMovies.css";

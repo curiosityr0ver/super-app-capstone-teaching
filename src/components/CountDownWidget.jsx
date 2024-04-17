@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CountDownWidget.module.css";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
-import { set } from "mongoose";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 function CountDownWidget() {
