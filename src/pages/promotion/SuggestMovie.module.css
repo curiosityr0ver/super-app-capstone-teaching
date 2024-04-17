@@ -1,0 +1,25 @@
+.widget {
+    margin: 0px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget h3 {
+    all: unset;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #878787;
+}
+
+.catalogue {
+    display: flex;
+    /* background-color: red; */
+    /* justify-content: space-between; */
+    gap: 30px;
+}
+
+.catalogue img {
+    object-fit: cover;
+    border-radius: 10px;
+}
