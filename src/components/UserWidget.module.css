@@ -1,9 +1,41 @@
 .userWidget {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-bottom: 1.5%;
+    padding: 30px 50px;
+    height: 65%;
+    color: white;
     background-color: #5746EA;
-    max-height: inherit;
-    max-width: inherit;
+    border-radius: 30px;
+}
+
+.userWidget h3 {
+    margin: 0px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.userWidget h1 {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 3.5rem;
 }
 
 .userWidget img {
-    height: inherit;
+    height: 100%;
+}
+
+.genreGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pill {
+    width: 20%;
+    flex: 0 0 calc(50% - 60px);
+    border-radius: 20px;
+    background-color: #9F94FF;
+    padding: 10px 20px;
+    margin: 10px;
 }

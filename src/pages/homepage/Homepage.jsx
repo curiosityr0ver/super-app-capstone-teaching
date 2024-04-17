@@ -6,6 +6,7 @@ import { FaThermometerThreeQuarters } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
 import { RiContrastDrop2Fill } from "react-icons/ri";
 import { genres } from "../../assets/data/genres";
+import UserWidget from "../../components/UserWidget";
 
 function Homepage() {
 	const NEWS_API = process.env.REACT_APP_NEWS_API_KEY;
@@ -108,25 +109,7 @@ function Homepage() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.left}>
-				{user && (
-					<div className={styles.userWidget}>
-						<img src={userAvatar} alt="user avatar" />
-						<div>
-							<h3> {user.name}</h3>
-							<h3>{user.email}</h3>
-							<h1>{user.username}</h1>
-							{selectedGenres && (
-								<div className={styles.genreGrid}>
-									{selectedGenres
-										.filter((genre, index) => index < 4)
-										.map((genre) => (
-											<div className={styles.pill}>{genres[genre].title}</div>
-										))}
-								</div>
-							)}
-						</div>
-					</div>
-				)}
+				{user && <UserWidget user={user} selectedGenres={selectedGenres} />}
 				{weather && (
 					<div className={styles.weatherWidget}>
 						<div className={styles.header}>
@@ -168,7 +151,7 @@ function Homepage() {
 					</div>
 				)}
 			</div>
-			<div className={styles.right}>
+			{/* <div className={styles.right}>
 				{news && (
 					<div className={styles.newsWidget}>
 						<div className={styles.header}>
@@ -181,7 +164,7 @@ function Homepage() {
 						<div className={styles.footer}>{news.description}</div>
 					</div>
 				)}
-			</div>
+			</div> */}
 		</div>
 	);
 }

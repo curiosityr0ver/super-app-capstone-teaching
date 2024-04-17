@@ -7,11 +7,11 @@ function UserWidget({ user, selectedGenres }) {
 	const { name, email, username } = user;
 	return (
 		<div className={styles.userWidget}>
-			{/* <img src={userAvatar} alt="user avatar" /> */}
+			<img src={userAvatar} alt="user avatar" />
 			<div>
-				<h3> {user.name}</h3>
-				<h3>{user.email}</h3>
-				<h1>{user.username}</h1>
+				<h3> {name}</h3>
+				<h3>{email}</h3>
+				<h1>{username}</h1>
 				{selectedGenres && (
 					<div className={styles.genreGrid}>
 						{selectedGenres
