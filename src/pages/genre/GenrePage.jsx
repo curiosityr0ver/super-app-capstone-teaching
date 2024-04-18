@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./GenrePage.module.css";
 import { IoIosWarning } from "react-icons/io";
 import { genres } from "../../assets/data/genres";
+import { colors } from "../../assets/data/colors";
 import { useNavigate } from "react-router-dom";
 import { set } from "mongoose";
 
@@ -18,18 +19,6 @@ function GenrePage() {
 		localStorage.setItem("selectedGenres", JSON.stringify(selectedGenres));
 		console.log(localStorage.getItem("selectedGenres"));
 	}, [selectedGenres]);
-
-	const bgColors = [
-		"#11B800",
-		"#D7A4FF",
-		"#11B800",
-		"#84C2FF",
-		"#902500",
-		"#7358FF",
-		"#FF4ADE",
-		"#E61E32",
-		"#6CD061",
-	];
 
 	const removeGenre = (index) => {
 		console.log(index); // 3
@@ -68,7 +57,7 @@ function GenrePage() {
 					{selectedGenres.map((item, index) => (
 						<div key={item} className={styles.selectedGenre}>
 							{genres[item].title}
-							<button onClick={() => removeGenre(item)}>X</button>
+							<button onClick={() => removeGenre(item)}>x</button>
 						</div>
 					))}
 				</div>
@@ -86,7 +75,7 @@ function GenrePage() {
 							className={styles.genreCard}
 							onClick={() => selectGenre(index)}
 							style={{
-								backgroundColor: bgColors[index],
+								backgroundColor: colors[index],
 								outline: selectedGenres.includes(index)
 									? "4px solid green"
 									: "",
