@@ -59,6 +59,12 @@ h2 {
     background-color: #292929;
 }
 
+.label {
+    font-size: small;
+    margin: 0% 25%;
+    color: red;
+}
+
 .form {
     display: flex;
     flex-direction: column;

@@ -15,6 +15,7 @@
   padding-left: 100px;
   padding-top: 5%;
 }
+
 .leftHeader {
   font-size: 2.5rem;
   font-family: "Single Day", cursive;
@@ -26,6 +27,7 @@
   font-size: 2.5rem;
   font-family: "DM Sans", sans-serif;
 }
+
 .right {
   display: flex;
   height: 100%;
@@ -33,6 +35,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .genreCard {
   margin: 10px 0px;
   width: 90%;
@@ -43,6 +46,7 @@
   color: white;
   border-radius: 12px;
 }
+
 .genreGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,7 +54,8 @@
   margin-top: 8%;
   height: 70%;
   width: 70%;
-  margin-left: 65px; /*added recently*/
+  margin-left: 65px;
+  /*added recently*/
 }
 
 .selected {
@@ -58,6 +63,7 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
 .selectedGenre {
   display: flex;
   justify-content: space-around;
@@ -68,12 +74,14 @@
   background-color: #72db73;
   flex: 0 0 calc(33.3333%-60px);
 }
+
 .selectedGenre button {
   font-size: large;
   background-color: transparent;
   border: none;
   color: darkgreen;
 }
+
 .warning {
   display: flex;
   margin-top: 10px;
@@ -81,6 +89,7 @@
   align-items: center;
   color: #ff0000;
 }
+
 .genreCard .title {
   font-size: 1.2rem;
   padding: 8px 0px;
@@ -88,10 +97,13 @@
   align-self: flex-start;
   margin-left: 10%;
 }
+
 .genreCard img {
+
   object-fit: cover;
   height: 60%;
 }
+
 .button {
   position: fixed;
   bottom: 39px;

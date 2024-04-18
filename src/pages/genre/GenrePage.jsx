@@ -3,6 +3,7 @@ import styles from "./GenrePage.module.css";
 import { IoIosWarning } from "react-icons/io";
 import { genres } from "../../assets/data/genres";
 import { useNavigate } from "react-router-dom";
+import { set } from "mongoose";
 
 function GenrePage() {
 	const [selectedGenres, setSelectedGenres] = useState([]); // set methods are ALWAYS asynchronous
@@ -29,7 +30,6 @@ function GenrePage() {
 		"#E61E32",
 		"#6CD061",
 	];
-	const bgColorsCSS = ["color1", "color2"];
 
 	const removeGenre = (index) => {
 		console.log(index); // 3
@@ -38,8 +38,11 @@ function GenrePage() {
 	};
 
 	const selectGenre = (index) => {
-		if (selectedGenres.includes(index)) return;
-		setSelectedGenres((prev) => [...prev, index]);
+		if (selectedGenres.includes(index)) {
+			setSelectedGenres((prev) => prev.filter((item) => item !== index));
+		} else {
+			setSelectedGenres((prev) => [...prev, index]);
+		}
 	};
 
 	const handleNext = () => {
@@ -82,7 +85,12 @@ function GenrePage() {
 							key={index}
 							className={styles.genreCard}
 							onClick={() => selectGenre(index)}
-							style={{ backgroundColor: bgColors[index] }}
+							style={{
+								backgroundColor: bgColors[index],
+								outline: selectedGenres.includes(index)
+									? "4px solid green"
+									: "",
+							}}
 						>
 							<div className={styles.title}> {genre.title}</div>
 							<img src={genre.bgImage} alt="background Image" />

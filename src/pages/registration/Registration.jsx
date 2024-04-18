@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Registration = () => {
 	const navigate = useNavigate();
 	const [name, setName] = useState();
+	const [checkWarning, setCheckWarning] = useState(false);
 	const [username, setUsername] = useState();
 	const [email, setEmail] = useState();
 	const [mobile, setMobile] = useState();
@@ -14,6 +15,7 @@ const Registration = () => {
 		city: "Mumbai",
 		country: "India",
 	});
+	const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 
 	useEffect(() => {
 		if (localStorage.getItem("currentUser")) {
@@ -21,18 +23,15 @@ const Registration = () => {
 		}
 	});
 
-	// useEffect(() => {
-	// 	// console.log({ name, username, email, mobile, shareData });
-	// }, [name, username, email, mobile, shareData]);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!name || !username || !email || !shareData) {
-			alert("Please fill all fields");
-			return;
-		} else {
+		setCheckWarning(true);
+		if (!name || !username || !email || !shareData) return;
+		else {
 			const currentUser = { name, username, email, mobile };
 			localStorage.setItem("currentUser", JSON.stringify(currentUser));
+			localStorage.setItem("location", JSON.stringify(null));
+			localStorage.setItem("selectedGenres", null);
 		}
 		console.log(JSON.parse(localStorage.getItem("currentUser")));
 	};
@@ -59,9 +58,20 @@ const Registration = () => {
 							name="name"
 							placeholder="Name"
 							className={styles.input}
+							style={{
+								border: checkWarning && !name ? "1px solid red" : "none",
+							}}
 							value={name}
 							onChange={(e) => setName(e.target.value)}
 						/>
+						<label
+							className={styles.label}
+							style={{
+								display: checkWarning && !name ? "block" : "none",
+							}}
+						>
+							Field is required
+						</label>
 					</div>
 					<div className="form-group">
 						<input
@@ -69,9 +79,20 @@ const Registration = () => {
 							name="username"
 							placeholder="Userame"
 							className={styles.input}
+							style={{
+								border: checkWarning && !username ? "1px solid red" : "none",
+							}}
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 						/>
+						<label
+							className={styles.label}
+							style={{
+								display: checkWarning && !username ? "block" : "none",
+							}}
+						>
+							Field is required
+						</label>
 					</div>
 					<div className="form-group">
 						<input
@@ -79,9 +100,20 @@ const Registration = () => {
 							name="email"
 							placeholder="Email"
 							className={styles.input}
+							style={{
+								border: checkWarning && !email ? "1px solid red" : "none",
+							}}
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
+						<label
+							className={styles.label}
+							style={{
+								display: checkWarning && !email ? "block" : "none",
+							}}
+						>
+							Field is required
+						</label>
 					</div>
 					<div className="form-group">
 						<input
@@ -89,9 +121,20 @@ const Registration = () => {
 							name="mobile"
 							placeholder="Mobile"
 							className={styles.input}
+							style={{
+								border: checkWarning && !email ? "block" : "none",
+							}}
 							value={mobile}
 							onChange={(e) => setMobile(e.target.value)}
 						/>
+						<label
+							className={styles.label}
+							style={{
+								display: checkWarning && !mobile ? "block" : "none",
+							}}
+						>
+							Field is required
+						</label>
 					</div>
 					<div className={styles.checkbox}>
 						<input
@@ -102,6 +145,14 @@ const Registration = () => {
 						/>
 						<label htmlFor="mobile">
 							Share my registration data with Superapp
+						</label>
+						<label
+							className={styles.label}
+							style={{
+								display: checkWarning && !shareData ? "block" : "none",
+							}}
+						>
+							Check if you want to proceed
 						</label>
 					</div>
 					<button
