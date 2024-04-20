@@ -12,15 +12,15 @@
 
 
 .userWidget h3 {
-    margin: 0px;
-    font-size: 2rem;
+    font-size: larger;
     font-weight: 300;
 }
 
 .userWidget h1 {
+    all: unset;
     margin-top: 10px;
     font-weight: 500;
-    font-size: 3.5rem;
+    font-size: xx-large;
 }
 
 .userWidget img {

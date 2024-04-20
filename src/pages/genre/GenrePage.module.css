@@ -66,14 +66,14 @@
 
 .selectedGenre {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-radius: 20px;
   padding: 4px 16px;
   margin: 8px 8px;
   color: white;
   background-color: #72db73;
-  flex: 0 0 calc(33.3333%-60px);
+  flex: 0 0 calc(50% - 133px)
 }
 
 .selectedGenre button {
@@ -101,9 +101,8 @@
 }
 
 .genreCard img {
-
   object-fit: cover;
-  height: 60%;
+  height: 63%;
 }
 
 .button {

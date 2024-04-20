@@ -7,38 +7,24 @@ import TimerWidget from "../../components/TimerWidget";
 import PromotionPage from "../promotion/PromotionPage";
 function Dashboard() {
 	const [user, setUser] = useState();
+	const [selectedGenres, setSelectedGenres] = useState();
 
 	useEffect(() => {
+		setSelectedGenres(JSON.parse(localStorage.getItem("selectedGenres")));
 		setUser(JSON.parse(localStorage.getItem("currentUser")));
-		// console.log(new Date());
-		// setSelectedGenres(JSON.parse(localStorage.getItem("selectedGenres")));
-		// fetchWeatherData();
-		// fetchNewsData();
 	}, []);
-
-	// const fetchWeatherData = async () => {
-	// 	const { data, status } = await axios.get(
-	// 		`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API}&q=Mumbai`
-	// 	);
-	// 	if (status == 200) {
-	// 		setWeather(data.current);
-	// 	}
-	// };
-	// const fetchNewsData = async () => {
-	// 	const { data, status } = await axios.get(
-	// 		`https://newsapi.org/v2/top-headlines?country=in&apiKey=${NEWS_API}`
-	// 	);
-	// 	if (status == 200) {
-	// 		setNews(data.articles[0]);
-	// 	}
-	// };
-	// console.log(user);
 
 	return (
 		<div className={styles.page}>
 			<div className={styles.container}>
 				<div className={styles.UserWidget}>
-					{/* {user && <UserWidget user={user} />} */}
+					{user && selectedGenres && (
+						<UserWidget
+							user={user}
+							selectedGenres={selectedGenres}
+							type={"small"}
+						/>
+					)}
 				</div>
 				<div className={styles.WeatherWidget}></div>
 				<div className={styles.TimerWidget}>
